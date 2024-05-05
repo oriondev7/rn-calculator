@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {Color, Size, Arrangement} from '../../../../constants';
+import { StyleSheet } from 'react-native'
+import { Color, Size, Arrangement } from '../../constants'
 
 export const styles = StyleSheet.create({
   btnBlue: {
@@ -51,4 +51,4 @@ export const styles = StyleSheet.create({
     fontSize: Size.btnFontSize,
     color: Color.black,
   },
-});
+})
