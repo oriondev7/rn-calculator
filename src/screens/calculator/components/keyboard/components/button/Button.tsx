@@ -16,25 +16,27 @@ export const Button = ({ title, onPress, isBlue, isGray }: ButtonProps) => {
   const isThemeLight = theme === ThemeMode.light
 
   return (
-    <TouchableOpacity 
+    <TouchableOpacity
       style={
-        isBlue 
-        ? styles.btnBlue 
-        : isGray 
-        ? styles.btnGray 
-        : isThemeLight 
-        ? styles.btnLight 
-        : styles.btnDark
+        isBlue
+          ? styles.btnBlue
+          : isGray
+          ? styles.btnGray
+          : isThemeLight
+          ? styles.btnLight
+          : styles.btnDark
       }
       onPress={onPress}
     >
-      <Text style={
-        isBlue || isGray
-        ? styles.smallTextLight
-        : isThemeLight
-        ? styles.smallTextDark
-        : styles.smallTextLight
-      }>
+      <Text
+        style={
+          isBlue || isGray
+            ? styles.smallTextLight
+            : isThemeLight
+            ? styles.smallTextDark
+            : styles.smallTextLight
+        }
+      >
         {title}
       </Text>
     </TouchableOpacity>

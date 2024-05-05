@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native";
-import { Color, Size, Arrangement } from "../../../../constants";
+import { StyleSheet } from 'react-native'
+import { Color, Size, Arrangement } from '../../../../constants'
 
 export const styles = StyleSheet.create({
   row: {
@@ -14,15 +14,15 @@ export const styles = StyleSheet.create({
 
   operationContainer: {
     height: Size.kbHeight,
-    width: "90%",
+    width: '90%',
     justifyContent: Arrangement.flexEnd,
     alignSelf: Arrangement.center,
   },
 
-  operation: { 
-    color: Color.purple, 
-    fontSize: Size.kbOperationFontSize, 
-    fontWeight: '500'
+  operation: {
+    color: Color.purple,
+    fontSize: Size.kbOperationFontSize,
+    fontWeight: '500',
   },
 
   lhs: {

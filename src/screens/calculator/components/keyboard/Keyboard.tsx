@@ -55,13 +55,17 @@ export const Keyboard = () => {
 
   const displayLHS = () => {
     if (result !== null) {
-      return <Text style={
-        result < 9999
-        ? [styles.lhs, {color: Color.result}]
-        : [styles.lhs, {color: Color.result, fontSize: 50}]
-      }>
-        {result?.toString()}
-      </Text>
+      return (
+        <Text
+          style={
+            result < 9999
+              ? [styles.lhs, { color: Color.result }]
+              : [styles.lhs, { color: Color.result, fontSize: 50 }]
+          }
+        >
+          {result?.toString()}
+        </Text>
+      )
     }
 
     if (lhs && lhs.length < 6) {
@@ -73,15 +77,11 @@ export const Keyboard = () => {
     }
 
     if (lhs.length > 5 && lhs.length < 8) {
-      return <Text style={[styles.lhs, {fontSize: 70}]}>
-        {lhs}
-      </Text>
+      return <Text style={[styles.lhs, { fontSize: 70 }]}>{lhs}</Text>
     }
 
     if (lhs.length > 7) {
-      return <Text style={[styles.lhs, { fontSize: 50}]}>
-        {lhs}
-      </Text>
+      return <Text style={[styles.lhs, { fontSize: 50 }]}>{lhs}</Text>
     }
   }
 
@@ -96,38 +96,54 @@ export const Keyboard = () => {
       </View>
 
       <View style={styles.row}>
-        <Button title='C' onPress={clear} isGray />
-        <Button title='+/-' onPress={() => onPressOperation('+/-')} isGray />
-        <Button title='%' onPress={() => onPressOperation('%')} isGray />
-        <Button title='÷' onPress={() => onPressOperation(Operation.divide)} isBlue />
-      </View>
-      
-      <View style={styles.row}>
-        <Button title='7' onPress={() => onPressNumber('7')} />
-        <Button title='8' onPress={() => onPressNumber('8')} />
-        <Button title='9' onPress={() => onPressNumber('9')} />
-        <Button title='x' onPress={() => onPressOperation(Operation.multiply)} isBlue />
+        <Button title="C" onPress={clear} isGray />
+        <Button title="+/-" onPress={() => onPressOperation('+/-')} isGray />
+        <Button title="%" onPress={() => onPressOperation('%')} isGray />
+        <Button
+          title="÷"
+          onPress={() => onPressOperation(Operation.divide)}
+          isBlue
+        />
       </View>
 
       <View style={styles.row}>
-        <Button title='4' onPress={() => onPressNumber('4')} />
-        <Button title='5' onPress={() => onPressNumber('5')} />
-        <Button title='6' onPress={() => onPressNumber('6')} />
-        <Button title='-' onPress={() => onPressOperation(Operation.subtract)} isBlue />
+        <Button title="7" onPress={() => onPressNumber('7')} />
+        <Button title="8" onPress={() => onPressNumber('8')} />
+        <Button title="9" onPress={() => onPressNumber('9')} />
+        <Button
+          title="x"
+          onPress={() => onPressOperation(Operation.multiply)}
+          isBlue
+        />
       </View>
 
       <View style={styles.row}>
-        <Button title='1' onPress={() => onPressNumber('1')} />
-        <Button title='2' onPress={() => onPressNumber('2')} />
-        <Button title='3' onPress={() => onPressNumber('3')} />
-        <Button title='+' onPress={() => onPressOperation(Operation.add)} isBlue />
+        <Button title="4" onPress={() => onPressNumber('4')} />
+        <Button title="5" onPress={() => onPressNumber('5')} />
+        <Button title="6" onPress={() => onPressNumber('6')} />
+        <Button
+          title="-"
+          onPress={() => onPressOperation(Operation.subtract)}
+          isBlue
+        />
       </View>
 
       <View style={styles.row}>
-        <Button title='.' onPress={() => onPressNumber('.')} />
-        <Button title='0' onPress={() => onPressNumber('0')} />
-        <Button title='⌫' onPress={() => setLHS(lhs.slice(0, -1))} />
-        <Button title='=' onPress={getResult} isBlue />
+        <Button title="1" onPress={() => onPressNumber('1')} />
+        <Button title="2" onPress={() => onPressNumber('2')} />
+        <Button title="3" onPress={() => onPressNumber('3')} />
+        <Button
+          title="+"
+          onPress={() => onPressOperation(Operation.add)}
+          isBlue
+        />
+      </View>
+
+      <View style={styles.row}>
+        <Button title="." onPress={() => onPressNumber('.')} />
+        <Button title="0" onPress={() => onPressNumber('0')} />
+        <Button title="⌫" onPress={() => setLHS(lhs.slice(0, -1))} />
+        <Button title="=" onPress={getResult} isBlue />
       </View>
     </View>
   )

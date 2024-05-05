@@ -6,7 +6,7 @@ export enum Color {
   btnDark = '#2E2F38',
   gray = '#747477',
   black = '#000000',
-  white = '#FFFFFF', 
+  white = '#FFFFFF',
   result = '#46D5B2',
-  purple = 'purple'
+  purple = 'purple',
 }

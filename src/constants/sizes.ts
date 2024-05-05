@@ -11,5 +11,5 @@ export enum Size {
   kbBottom = 30,
   kbOperationFontSize = 50,
   kbBigFontSize = 96,
-  kbSmallFontSize = 40
+  kbSmallFontSize = 40,
 }

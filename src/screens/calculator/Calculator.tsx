@@ -7,20 +7,18 @@ import { Keyboard } from './components'
 
 export const Calculator = () => {
   const [theme, setTheme] = useState(ThemeMode.light)
-  
   const isThemeLight = theme === ThemeMode.light
-  
+
   const toggleThemeMode = () => {
     setTheme(isThemeLight ? ThemeMode.dark : ThemeMode.light)
   }
 
   return (
     <ThemeContext.Provider value={theme}>
-      <SafeAreaView style={isThemeLight ? styles.lightContainer : styles.darkContainer}>
-        <Switch
-          value={isThemeLight}
-          onValueChange={toggleThemeMode}
-        />
+      <SafeAreaView
+        style={isThemeLight ? styles.lightContainer : styles.darkContainer}
+      >
+        <Switch value={isThemeLight} onValueChange={toggleThemeMode} />
         <Keyboard />
       </SafeAreaView>
     </ThemeContext.Provider>
