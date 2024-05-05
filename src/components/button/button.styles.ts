@@ -3,7 +3,7 @@ import { Color, Size, Arrangement } from '../../constants'
 
 export const styles = StyleSheet.create({
   btnBlue: {
-    width: Size.btnWidht,
+    width: Size.btnWidth,
     height: Size.btnHeight,
     borderRadius: Size.btnBorderRadius,
     backgroundColor: Color.blue,
@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
   },
 
   btnDark: {
-    width: Size.btnWidht,
+    width: Size.btnWidth,
     height: Size.btnHeight,
     borderRadius: Size.btnBorderRadius,
     backgroundColor: Color.btnDark,
@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
   },
 
   btnLight: {
-    width: Size.btnWidht,
+    width: Size.btnWidth,
     height: Size.btnHeight,
     borderRadius: Size.btnBorderRadius,
     backgroundColor: Color.white,
@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   },
 
   btnGray: {
-    width: Size.btnWidht,
+    width: Size.btnWidth,
     height: Size.btnHeight,
     borderRadius: Size.btnBorderRadius,
     backgroundColor: Color.btnGray,

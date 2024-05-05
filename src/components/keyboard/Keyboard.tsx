@@ -1,57 +1,57 @@
-import * as React from 'react';
-import {Button} from './components';
-import {View, Text} from 'react-native';
-import {styles} from './keyboard.styles';
-import {Color, Operation} from '../../constants';
+import * as React from 'react'
+import { Button } from '../'
+import { View, Text } from 'react-native'
+import { styles } from './keyboard.styles'
+import { Color, Operation } from '../../constants'
 
 export const Keyboard = () => {
-  const [lhs, setLHS] = React.useState('');
-  const [rhs, setRHS] = React.useState('');
-  const [operation, setOperation] = React.useState('');
-  const [result, setResult] = React.useState<number | null>(null);
+  const [lhs, setLHS] = React.useState('')
+  const [rhs, setRHS] = React.useState('')
+  const [operation, setOperation] = React.useState('')
+  const [result, setResult] = React.useState<number | null>(null)
 
   const onPressNumber = (number: string) => {
     if (lhs.length < 10) {
-      setLHS(lhs + number);
+      setLHS(lhs + number)
     }
-  };
+  }
 
   const onPressOperation = (operation: string) => {
-    setOperation(operation);
-    setRHS(lhs);
-    setLHS('');
-  };
+    setOperation(operation)
+    setRHS(lhs)
+    setLHS('')
+  }
 
   const clear = () => {
-    setLHS('');
-    setRHS('');
-    setOperation('');
-    setResult(null);
-  };
+    setLHS('')
+    setRHS('')
+    setOperation('')
+    setResult(null)
+  }
 
   const getResult = () => {
     switch (operation) {
       case Operation.add:
-        clear();
-        setResult(parseInt(rhs) + parseInt(lhs));
-        break;
+        clear()
+        setResult(parseInt(rhs) + parseInt(lhs))
+        break
       case Operation.subtract:
-        clear();
-        setResult(parseInt(rhs) - parseInt(lhs));
-        break;
+        clear()
+        setResult(parseInt(rhs) - parseInt(lhs))
+        break
       case Operation.multiply:
-        clear();
-        setResult(parseInt(rhs) * parseInt(lhs));
-        break;
+        clear()
+        setResult(parseInt(rhs) * parseInt(lhs))
+        break
       case Operation.divide:
-        clear();
-        setResult(parseInt(rhs) / parseInt(lhs));
-        break;
+        clear()
+        setResult(parseInt(rhs) / parseInt(lhs))
+        break
       default:
-        clear();
-        setResult(0);
+        clear()
+        setResult(0)
     }
-  };
+  }
 
   const displayLHS = () => {
     if (result !== null) {
@@ -59,30 +59,31 @@ export const Keyboard = () => {
         <Text
           style={
             result < 9999
-              ? [styles.lhs, {color: Color.result}]
-              : [styles.lhs, {color: Color.result, fontSize: 50}]
-          }>
+              ? [styles.lhs, { color: Color.result }]
+              : [styles.lhs, { color: Color.result, fontSize: 50 }]
+          }
+        >
           {result?.toString()}
         </Text>
-      );
+      )
     }
 
     if (lhs && lhs.length < 6) {
-      return <Text style={styles.lhs}>{lhs}</Text>;
+      return <Text style={styles.lhs}>{lhs}</Text>
     }
 
     if (lhs === '') {
-      return <Text style={styles.lhs}>{'0'}</Text>;
+      return <Text style={styles.lhs}>{'0'}</Text>
     }
 
     if (lhs.length > 5 && lhs.length < 8) {
-      return <Text style={[styles.lhs, {fontSize: 70}]}>{lhs}</Text>;
+      return <Text style={[styles.lhs, { fontSize: 70 }]}>{lhs}</Text>
     }
 
     if (lhs.length > 7) {
-      return <Text style={[styles.lhs, {fontSize: 50}]}>{lhs}</Text>;
+      return <Text style={[styles.lhs, { fontSize: 50 }]}>{lhs}</Text>
     }
-  };
+  }
 
   return (
     <View style={styles.container}>
@@ -145,5 +146,5 @@ export const Keyboard = () => {
         <Button title="=" onPress={getResult} isBlue />
       </View>
     </View>
-  );
-};
+  )
+}

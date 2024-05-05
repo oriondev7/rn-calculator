@@ -1,17 +1,11 @@
-import { useContext } from 'react'
+import React, { FC, useContext } from 'react'
 import { TouchableOpacity, Text } from 'react-native'
 import { ThemeContext } from '../../context/ThemeContext'
 import { styles } from './button.styles'
 import { ThemeMode } from '../../constants'
+import { ButtonProps } from './button.types'
 
-interface ButtonProps {
-  title: string
-  onPress: () => void
-  isBlue?: boolean
-  isGray?: boolean
-}
-
-export const Button = ({ title, onPress, isBlue, isGray }: ButtonProps) => {
+export const Button: FC<ButtonProps> = ({ title, onPress, isBlue, isGray }) => {
   const theme = useContext(ThemeContext)
   const isThemeLight = theme === ThemeMode.light
 
