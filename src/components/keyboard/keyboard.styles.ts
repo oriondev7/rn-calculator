@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
-import { Color, Size, Arrangement } from '../../../../constants'
+import {StyleSheet} from 'react-native';
+import {Color, Size, Arrangement} from '../../constants';
 
 export const styles = StyleSheet.create({
   row: {
@@ -38,4 +38,4 @@ export const styles = StyleSheet.create({
     fontWeight: '200',
     alignSelf: Arrangement.flexEnd,
   },
-})
+});
