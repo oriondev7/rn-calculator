@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Switch, SafeAreaView } from 'react-native'
+import { Switch, SafeAreaView, View, Text } from 'react-native'
 import { ThemeMode } from '../../constants'
 import { styles } from './calculator.styles'
 import { ThemeContext } from '../../context/ThemeContext'
@@ -18,7 +18,21 @@ export const Calculator = () => {
       <SafeAreaView
         style={isThemeLight ? styles.lightContainer : styles.darkContainer}
       >
-        <Switch value={isThemeLight} onValueChange={toggleThemeMode} />
+        <View
+          style={{
+            width: '90%',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}
+        >
+          <Text
+            style={{ color: isThemeLight ? 'black' : 'white', fontSize: 20 }}
+          >
+            Toggle Theme Color
+          </Text>
+          <Switch value={isThemeLight} onValueChange={toggleThemeMode} />
+        </View>
         <Keyboard />
       </SafeAreaView>
     </ThemeContext.Provider>
