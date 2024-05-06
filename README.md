@@ -1,3 +1,7 @@
+
+![calculator](https://github.com/oriondev7/rn-calculator/assets/57668339/d4d82c28-b0ff-49f2-972d-01491466642f)
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
